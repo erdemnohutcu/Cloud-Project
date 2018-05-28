@@ -1,0 +1,53 @@
+﻿@model TravelAgency.Models.CountryT
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Country Edit</h4>
+        </div>
+        <div class="panel-body">
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Country</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.countryid)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.countryname, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.countryname, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.countryname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn  btn-3d btn-success" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+            <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+            <script src="~/Scripts/jquery.validate.min.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

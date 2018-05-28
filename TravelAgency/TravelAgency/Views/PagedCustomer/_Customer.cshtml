@@ -1,0 +1,62 @@
+﻿@model TravelAgency.ViewModel.CustomerModel
+  
+@using PagedList;
+@using PagedList.Mvc;
+
+<div id="content">
+
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>
+                       Name
+                    </th>
+                    <th>
+                       Surname
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.phone)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cust in Model.Customers)
+                {
+                    <tr>
+                        <td>
+                            @cust.customername
+                        </td>
+                        <td>
+                            @cust.customersurname
+                        </td>
+                        <td>
+                            @cust.email
+                        </td>
+                        <td>
+                            @cust.phone
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+
+
+        @Html.PagedListPager(Model.Customers, page => Url.Action("Index", new RouteValueDictionary
+{
+    {"Page",page},
+    {"email",Model.email},
+    {"phone",Model.phone}
+
+}), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "ajax-main" }))
+
+    </div>
+</div>

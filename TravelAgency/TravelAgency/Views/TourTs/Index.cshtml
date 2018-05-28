@@ -1,0 +1,84 @@
+﻿@model IEnumerable<TravelAgency.Models.TourT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="content">
+
+    <div class="col-md-12 top-20 padding-0">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading"><h3>TOURS</h3></div>
+
+                <div class="panel-body">
+                    <div class="responsive-table">
+                        <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tourname)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tourprice)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.tourcapacity)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.startdate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.finishdate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CountryT.countryname)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TourtypeT.tourtypename)
+                                    </th>
+                                    <th></th>
+                                    @Html.ActionLink("Create New", "Create")
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tourname)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tourprice)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tourcapacity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.startdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.finishdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CountryT.countryname)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TourtypeT.tourtypename)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.tourid }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.tourid }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.tourid })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

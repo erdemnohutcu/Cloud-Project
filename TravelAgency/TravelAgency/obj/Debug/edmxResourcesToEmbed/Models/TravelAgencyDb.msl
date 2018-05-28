@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelaModelStoreContainer" CdmEntityContainer="TravelaEntities">
+    <EntitySetMapping Name="CountryT">
+      <EntityTypeMapping TypeName="TravelaModel.CountryT">
+        <MappingFragment StoreEntitySet="CountryT">
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="countryname" ColumnName="countryname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerT">
+      <EntityTypeMapping TypeName="TravelaModel.CustomerT">
+        <MappingFragment StoreEntitySet="CustomerT">
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="customersurname" ColumnName="customersurname" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelT">
+      <EntityTypeMapping TypeName="TravelaModel.HotelT">
+        <MappingFragment StoreEntitySet="HotelT">
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="hotelname" ColumnName="hotelname" />
+          <ScalarProperty Name="hotelcapacity" ColumnName="hotelcapacity" />
+          <ScalarProperty Name="hoteltype" ColumnName="hoteltype" />
+          <ScalarProperty Name="hotelprice" ColumnName="hotelprice" />
+          <ScalarProperty Name="hotelphone" ColumnName="hotelphone" />
+          <ScalarProperty Name="hoteladdress" ColumnName="hoteladdress" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="tourid" ColumnName="tourid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationT">
+      <EntityTypeMapping TypeName="TravelaModel.ReservationT">
+        <MappingFragment StoreEntitySet="ReservationT">
+          <ScalarProperty Name="reservationid" ColumnName="reservationid" />
+          <ScalarProperty Name="reservationnumber" ColumnName="reservationnumber" />
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="tourid" ColumnName="tourid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TravelaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourT">
+      <EntityTypeMapping TypeName="TravelaModel.TourT">
+        <MappingFragment StoreEntitySet="TourT">
+          <ScalarProperty Name="tourid" ColumnName="tourid" />
+          <ScalarProperty Name="tourname" ColumnName="tourname" />
+          <ScalarProperty Name="tourprice" ColumnName="tourprice" />
+          <ScalarProperty Name="tourcapacity" ColumnName="tourcapacity" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="finishdate" ColumnName="finishdate" />
+          <ScalarProperty Name="tourtypeid" ColumnName="tourtypeid" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourtypeT">
+      <EntityTypeMapping TypeName="TravelaModel.TourtypeT">
+        <MappingFragment StoreEntitySet="TourtypeT">
+          <ScalarProperty Name="tourtypeid" ColumnName="tourtypeid" />
+          <ScalarProperty Name="tourtypename" ColumnName="tourtypename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserT">
+      <EntityTypeMapping TypeName="TravelaModel.UserT">
+        <MappingFragment StoreEntitySet="UserT">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

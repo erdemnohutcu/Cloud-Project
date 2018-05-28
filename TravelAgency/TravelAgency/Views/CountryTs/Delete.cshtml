@@ -1,0 +1,43 @@
+﻿@model TravelAgency.Models.CountryT
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Country Delete</h4>
+        </div>
+        <div class="panel-body">
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.countryname)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.countryname)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-3d btn-danger" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>

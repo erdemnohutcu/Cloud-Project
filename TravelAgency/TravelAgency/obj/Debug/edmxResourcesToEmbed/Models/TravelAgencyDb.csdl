@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TravelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CountryT">
+    <Key>
+      <PropertyRef Name="countryid" />
+    </Key>
+    <Property Name="countryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HotelT" Relationship="Self.FK_Hotel_Country" FromRole="CountryT" ToRole="HotelT" />
+    <NavigationProperty Name="TourT" Relationship="Self.FK_Tour_Country" FromRole="CountryT" ToRole="TourT" />
+  </EntityType>
+  <EntityType Name="CustomerT">
+    <Key>
+      <PropertyRef Name="customerid" />
+    </Key>
+    <Property Name="customerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customersurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ReservationT" Relationship="Self.FK_Reservation_Customer" FromRole="CustomerT" ToRole="ReservationT" />
+  </EntityType>
+  <EntityType Name="HotelT">
+    <Key>
+      <PropertyRef Name="hotelid" />
+    </Key>
+    <Property Name="hotelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hotelcapacity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hoteltype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hotelprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hotelphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hoteladdress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="countryid" Type="Int32" />
+    <Property Name="tourid" Type="Int32" />
+    <NavigationProperty Name="CountryT" Relationship="Self.FK_Hotel_Country" FromRole="HotelT" ToRole="CountryT" />
+    <NavigationProperty Name="TourT" Relationship="Self.FK_Hotel_Tour" FromRole="HotelT" ToRole="TourT" />
+    <NavigationProperty Name="ReservationT" Relationship="Self.FK_Reservation_Hotel" FromRole="HotelT" ToRole="ReservationT" />
+  </EntityType>
+  <EntityType Name="ReservationT">
+    <Key>
+      <PropertyRef Name="reservationid" />
+    </Key>
+    <Property Name="reservationid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reservationnumber" Type="Int32" />
+    <Property Name="customerid" Type="Int32" />
+    <Property Name="tourid" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="hotelid" Type="Int32" />
+    <NavigationProperty Name="CustomerT" Relationship="Self.FK_Reservation_Customer" FromRole="ReservationT" ToRole="CustomerT" />
+    <NavigationProperty Name="HotelT" Relationship="Self.FK_Reservation_Hotel" FromRole="ReservationT" ToRole="HotelT" />
+    <NavigationProperty Name="TourT" Relationship="Self.FK_Reservation_Tour" FromRole="ReservationT" ToRole="TourT" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TourT">
+    <Key>
+      <PropertyRef Name="tourid" />
+    </Key>
+    <Property Name="tourid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tourname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tourprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tourcapacity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Precision="0" />
+    <Property Name="finishdate" Type="DateTime" Precision="0" />
+    <Property Name="tourtypeid" Type="Int32" />
+    <Property Name="countryid" Type="Int32" />
+    <NavigationProperty Name="CountryT" Relationship="Self.FK_Tour_Country" FromRole="TourT" ToRole="CountryT" />
+    <NavigationProperty Name="HotelT" Relationship="Self.FK_Hotel_Tour" FromRole="TourT" ToRole="HotelT" />
+    <NavigationProperty Name="ReservationT" Relationship="Self.FK_Reservation_Tour" FromRole="TourT" ToRole="ReservationT" />
+    <NavigationProperty Name="TourtypeT" Relationship="Self.FK_Tour_Tourtype" FromRole="TourT" ToRole="TourtypeT" />
+  </EntityType>
+  <EntityType Name="TourtypeT">
+    <Key>
+      <PropertyRef Name="tourtypeid" />
+    </Key>
+    <Property Name="tourtypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tourtypename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TourT" Relationship="Self.FK_Tour_Tourtype" FromRole="TourtypeT" ToRole="TourT" />
+  </EntityType>
+  <EntityType Name="UserT">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Hotel_Country">
+    <End Role="CountryT" Type="Self.CountryT" Multiplicity="0..1" />
+    <End Role="HotelT" Type="Self.HotelT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryT">
+        <PropertyRef Name="countryid" />
+      </Principal>
+      <Dependent Role="HotelT">
+        <PropertyRef Name="countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tour_Country">
+    <End Role="CountryT" Type="Self.CountryT" Multiplicity="0..1" />
+    <End Role="TourT" Type="Self.TourT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryT">
+        <PropertyRef Name="countryid" />
+      </Principal>
+      <Dependent Role="TourT">
+        <PropertyRef Name="countryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Customer">
+    <End Role="CustomerT" Type="Self.CustomerT" Multiplicity="0..1" />
+    <End Role="ReservationT" Type="Self.ReservationT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerT">
+        <PropertyRef Name="customerid" />
+      </Principal>
+      <Dependent Role="ReservationT">
+        <PropertyRef Name="customerid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hotel_Tour">
+    <End Role="TourT" Type="Self.TourT" Multiplicity="0..1" />
+    <End Role="HotelT" Type="Self.HotelT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TourT">
+        <PropertyRef Name="tourid" />
+      </Principal>
+      <Dependent Role="HotelT">
+        <PropertyRef Name="tourid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Hotel">
+    <End Role="HotelT" Type="Self.HotelT" Multiplicity="0..1" />
+    <End Role="ReservationT" Type="Self.ReservationT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HotelT">
+        <PropertyRef Name="hotelid" />
+      </Principal>
+      <Dependent Role="ReservationT">
+        <PropertyRef Name="hotelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Tour">
+    <End Role="TourT" Type="Self.TourT" Multiplicity="0..1" />
+    <End Role="ReservationT" Type="Self.ReservationT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TourT">
+        <PropertyRef Name="tourid" />
+      </Principal>
+      <Dependent Role="ReservationT">
+        <PropertyRef Name="tourid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tour_Tourtype">
+    <End Role="TourtypeT" Type="Self.TourtypeT" Multiplicity="0..1" />
+    <End Role="TourT" Type="Self.TourT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TourtypeT">
+        <PropertyRef Name="tourtypeid" />
+      </Principal>
+      <Dependent Role="TourT">
+        <PropertyRef Name="tourtypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TravelaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CountryT" EntityType="Self.CountryT" />
+    <EntitySet Name="CustomerT" EntityType="Self.CustomerT" />
+    <EntitySet Name="HotelT" EntityType="Self.HotelT" />
+    <EntitySet Name="ReservationT" EntityType="Self.ReservationT" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TourT" EntityType="Self.TourT" />
+    <EntitySet Name="TourtypeT" EntityType="Self.TourtypeT" />
+    <EntitySet Name="UserT" EntityType="Self.UserT" />
+    <AssociationSet Name="FK_Hotel_Country" Association="Self.FK_Hotel_Country">
+      <End Role="CountryT" EntitySet="CountryT" />
+      <End Role="HotelT" EntitySet="HotelT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tour_Country" Association="Self.FK_Tour_Country">
+      <End Role="CountryT" EntitySet="CountryT" />
+      <End Role="TourT" EntitySet="TourT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Customer" Association="Self.FK_Reservation_Customer">
+      <End Role="CustomerT" EntitySet="CustomerT" />
+      <End Role="ReservationT" EntitySet="ReservationT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hotel_Tour" Association="Self.FK_Hotel_Tour">
+      <End Role="TourT" EntitySet="TourT" />
+      <End Role="HotelT" EntitySet="HotelT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Hotel" Association="Self.FK_Reservation_Hotel">
+      <End Role="HotelT" EntitySet="HotelT" />
+      <End Role="ReservationT" EntitySet="ReservationT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Tour" Association="Self.FK_Reservation_Tour">
+      <End Role="TourT" EntitySet="TourT" />
+      <End Role="ReservationT" EntitySet="ReservationT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tour_Tourtype" Association="Self.FK_Tour_Tourtype">
+      <End Role="TourtypeT" EntitySet="TourtypeT" />
+      <End Role="TourT" EntitySet="TourT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

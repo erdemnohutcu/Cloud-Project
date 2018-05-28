@@ -1,0 +1,83 @@
+﻿@model TravelAgency.Models.TourT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Tour Details</h4>
+        </div>
+        <div class="panel-body">
+            <h4>Details</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.tourname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tourname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tourprice)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tourprice)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tourcapacity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tourcapacity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.startdate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.startdate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.finishdate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.finishdate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CountryT.countryname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CountryT.countryname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TourtypeT.tourtypename)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TourtypeT.tourtypename)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.tourid }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>

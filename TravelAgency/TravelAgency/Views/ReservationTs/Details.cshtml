@@ -1,0 +1,71 @@
+﻿@model TravelAgency.Models.ReservationT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="content">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">Reservation Details</h4>
+            </div>
+            <div class="panel-body">
+                <h4>Details</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.reservationnumber)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.reservationnumber)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.status)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CustomerT.customername)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CustomerT.customername)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HotelT.hotelname)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HotelT.hotelname)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TourT.tourname)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TourT.tourname)
+                    </dd>
+
+                </dl>
+            </div>
+            <dd>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.reservationid }) |
+                @Html.ActionLink("Back to List", "Index")
+            </dd>
+            <br />
+            <br />
+            <br />

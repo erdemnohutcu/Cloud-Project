@@ -1,0 +1,91 @@
+﻿@model TravelAgency.Models.HotelT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Hotel Details</h4>
+        </div>
+        <div class="panel-body">
+            <h4>Details</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.hotelname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hotelname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hotelcapacity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hotelcapacity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hoteltype)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hoteltype)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hotelprice)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hotelprice)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hotelphone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hotelphone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hoteladdress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hoteladdress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CountryT.countryname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CountryT.countryname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TourT.tourname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TourT.tourname)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.hotelid }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>

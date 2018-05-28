@@ -1,0 +1,58 @@
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\csc.exe
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\System.Collections.Immutable.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\vbc.exe
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\VBCSCompiler.exe
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\roslyn\VBCSCompiler.exe.config
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\TravelAgency.dll.config
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\TravelAgency.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\TravelAgency.pdb
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\EntityFramework.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Razor.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Webpages.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Webpages.Deployment.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Webpages.Razor.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Helpers.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\System.Web.Mvc.xml
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\obj\Debug\TravelAgency.dll
+c:\users\user\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb
+C:\Users\User\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\PagedList.xml
+C:\Users\User\documents\visual studio 2015\Projects\TravelAgency\TravelAgency\bin\PagedList.Mvc.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\csc.exe
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\vbc.exe
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\TravelAgency.dll.config
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\TravelAgency.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\TravelAgency.pdb
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\EntityFramework.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\PagedList.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\PagedList.Mvc.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Razor.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Webpages.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Webpages.Deployment.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Webpages.Razor.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Helpers.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\bin\System.Web.Mvc.xml
+C:\Users\User\Desktop\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\TravelAgency\TravelAgency\obj\Debug\TravelAgency.dll
+C:\Users\User\Desktop\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb

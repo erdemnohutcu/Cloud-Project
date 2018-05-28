@@ -1,0 +1,111 @@
+﻿@model TravelAgency.Models.ReservationT
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Reservation Edit</h4>
+        </div>
+        <div class="panel-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.reservationid)
+                @Html.HiddenFor(model => model.customerid)
+                @Html.HiddenFor(model => model.reservationnumber)
+
+              
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.status)
+                            @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+              
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.tourid, "Tour", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("tourid", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.tourid, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.hotelid, "Hotel", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("hotelid", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.hotelid, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn  btn-3d btn-success" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+            }
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <script src="~/scripts/jquery.validate.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+    @section scripts
+{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#tourid").change(function () {
+                    var id = $(this).val();
+                    var hotelList = $("#hotelid");
+
+                    hotelList.empty();
+                    $.ajax({
+                        url: '/Booking/HotelList',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { 'id': id },
+                        success: function (data) {
+                            $.each(data, function (index, option) {
+                                hotelList.append('<option value=' + option.Value + '> ' + option.Text + ' </option');
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    }

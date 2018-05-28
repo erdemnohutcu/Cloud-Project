@@ -1,0 +1,58 @@
+﻿@model TravelAgency.ViewModel.CustomerModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="content">
+    <div class="search-main">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            @using (Ajax.BeginForm("Index", "PagedCustomer", FormMethod.Post, new AjaxOptions { OnSuccess = "loadCust" }))
+                            {
+                                    <td>
+                                        <p style="font-size:14px">
+                                            @Html.DisplayNameFor(m => m.email)
+
+                                            <input type="text" class="form-text" @Html.EditorFor(m => m.email, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", placeholder = "domain@mail.com" } })
+</td>                            
+                                    <td>
+                                        <p style="font-size:14px">
+                                            @Html.DisplayNameFor(m => m.phone)
+
+                                            <input type="text" class="form-text"  @Html.EditorFor(m => m.phone, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", placeholder = "(###)###-####" } })
+</td>
+                               
+                                    <td>
+                                    <input type="submit" value="Search" name="submit" class="btn btn-3d btn-info" />
+                                    </td>
+                               
+                            }
+
+
+                            <div id="ajax-main">
+                                @Html.Partial("_Customer", @Model)
+                            </div>
+
+                        </tr>
+                    </thead>
+                </table>
+
+
+
+
+                @section scripts
+{
+                    <script type="text/javascript">
+                        function loadCust(result) {
+                            $("#ajax-main").html(result);
+                        }
+                    </script>
+                }
+            </div>
+      </div>
+ </div>
+       
+ 

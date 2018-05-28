@@ -1,0 +1,131 @@
+﻿@model TravelAgency.ViewModel.CustomerPopupModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<input type="button" value="Add Customer" id="btn-create" class="btn  btn-3d btn-success"/>
+
+<div id="user-content">
+    @Html.Action("CustomerList", "CustomerPopup")
+</div>
+<div id="dialog-user" title="Customer Popup">
+    @using (Ajax.BeginForm("Create", "CustomerPopup", FormMethod.Post, new AjaxOptions { OnSuccess = "Create" }, new { id = "frm-create" }))
+    {
+        @Html.HiddenFor(m => m.customerid)
+        
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.customername, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.customername, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.customername, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.customersurname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.customersurname, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.customersurname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+               
+                <div class="form-group">
+                    @Html.LabelFor(model => model.birthdate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.birthdate, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.ValidationMessageFor(model => model.birthdate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+               
+                <div class="form-group">
+                    @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", placeholder = "(###)###-####" } })
+                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+               
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", autocomplete = "off", placeholder = "domain@mail.com" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+               
+                <div class="form-group">
+                    @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+              
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Ok" class="btn  btn-3d btn-success" />
+                    </div>
+                </div>
+    }
+            </div>
+            <script src="~/scripts/jquery.validate.js"></script>
+            <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+
+            <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#btn-create").click(function () {
+                        $("#dialog-user").dialog("open");
+                        $("#frm-create")[0].reset();
+                        $("#customerid").val("0");
+                    });
+
+
+                    $("#dialog-user").dialog({
+                        width: 500,
+                        height: 700,
+                        autoOpen: false
+                    });
+                });
+
+                function Create(result) {
+                    if (result == "1") {
+                        $.ajax({
+                            url: '/CustomerPopup/CustomerList',
+                            type: 'get',
+                            dataType: 'html',
+                            success: function (data) {
+                                $("#user-content").html(data);
+                                $("#dialog-user").dialog("close");
+                            }
+
+                        });
+
+                    }
+                }
+            </script>

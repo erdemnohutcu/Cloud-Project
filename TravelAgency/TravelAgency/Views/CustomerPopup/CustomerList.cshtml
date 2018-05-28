@@ -1,0 +1,90 @@
+﻿@model List<TravelAgency.ViewModel.CustomerPopupModel>
+
+<style type="text/css">
+    .table-user tr td {
+        width: 150px;
+    }
+</style>
+<div class="table-responsive">
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Surname
+                </td>
+                <td>
+                    Birthdate
+                </td>
+                <td>
+                    Phone
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    Address
+                </td>
+                <td>
+                    Operation
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>
+                        @customer.customername
+                    </td>
+                    <td>
+                        @customer.customersurname
+                    </td>
+                    <td>
+                       @customer.birthdate
+                    </td>
+                    <td>
+                        @customer.phone
+                    </td>
+                    <td>
+                        @customer.email
+                    </td>
+                    <td>
+                        @customer.address
+                    </td>
+                    <td>
+
+                        <input type="button" value="Update" data-id="@customer.customerid" class="btn-update btn btn-3d btn-warning" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".btn-update").click(function () {
+                $("#dialog-user").dialog("open");
+                var id = $(this).attr("data-id");
+
+                $.ajax({
+                    url: '/CustomerPopup/Getir',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { "id": id },
+                    success: function (data) {
+                        $("#customerid").val(data.customerid);
+                        $("#customername").val(data.customername);
+                        $("#customersurname").val(data.customersurname);
+                        $("#birthdate").val(data.birthdate);
+                        $("#phone").val(data.phone);
+                        $("#email").val(data.email);
+                        $("#address").val(data.address);
+                    }
+                });
+            });
+        });
+    </script>
